@@ -707,13 +707,7 @@ const Model = types.model({
         // zoomScale scales image above maxScale, so scale the rest of stage the same way
         const z = Math.min(maxScale * self.zoomScale, coverScale);
 
-        if (self.containerWidth / self.naturalWidth > self.containerHeight / self.naturalHeight) {
-          self.stageZoomX = z;
-          self.stageZoomY = self.stageZoom;
-        } else {
-          self.stageZoomX = self.stageZoom;
-          self.stageZoomY = z;
-        }
+        self.stageZoomX = self.stageZoomY = z
       } else {
         self.stageZoomX = self.stageZoom;
         self.stageZoomY = self.stageZoom;
